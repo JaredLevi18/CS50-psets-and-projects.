@@ -28,7 +28,7 @@ int main(void)
         population = (initial + born) - die;
         years++;
     }
-    while (population < end);
+    while (population <= end);
 
     // TODO: Print number of years
     printf("Years: %i\n", years);
