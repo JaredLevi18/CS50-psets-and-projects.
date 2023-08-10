@@ -10,32 +10,24 @@ int main(void)
         // TODO: Prompt for start size
         printf("Enter the initial size: ");
         scanf("%d",&initial);
+    }
+    while (initial < 9);
 
+    do
+    {
         // TODO: Prompt for end size
         printf("Enter the end size: ");
         scanf("%d",&end);
     }
-    while (initial < 9 || end < 9);
-
+    while (end < initial);
     // TODO: Calculate number of years until we reach threshold
     int years = 0;
-    int born;
-    int die;
-    int population;
 
-    do
+    while (initial < end)
     {
-        born = initial / 3;
-        die = initial / 4;
-        population = (initial + born) - die;
-        if (initial == end){
-            years = 0;
-            break;
-        }
+        initial = initial + (initial/3) - initial/4;
         years++;
     }
-    while (population < end);
-
     // TODO: Print number of years
     printf("Years: %i\n", years);
 }
